@@ -1,90 +1,78 @@
-This is a sample theme for Obsidian ([https://obsidian.md](https://obsidian.md/)).
+# Hyperion
 
-## First time creating a theme?
+A sharp, high-contrast dark theme for [Obsidian](https://obsidian.md), built around a bold orange-red accent, an electric cyan secondary color, and a zero-radius "brutalist" design language.
 
-### Quick start
+![Obsidian Downloads](https://img.shields.io/badge/dynamic/json?query=%24.downloads&url=https%3A%2F%2Fraw.githubusercontent.com%2Fobsidianmd%2Fobsidian-releases%2Fmaster%2Fcommunity-theme-stats.json&label=downloads&color=%23ff4500)
 
-<img width="244" alt="Pasted image 20220822135601" src="https://user-images.githubusercontent.com/693981/186000386-4f4da987-fcaf-4aa5-aed4-e34b5901255d.png">
+## Design Philosophy
 
-First, select **Use this template** to create a copy of this repository under your GitHub profile. Then, clone your new repository to your computer.
+Hyperion takes Obsidian's default CSS variables and rebuilds them into a dark theme that is:
 
-Once you have the repository locally on your computer, there are a couple of placeholder fields you'll need to fill in.
+- **Brutalist** — all corners are square by default (radii are set to `0px`), with crisp `miter` joins and square line caps on all icons.
+- **High-contrast** — near-black backgrounds (`#0a0a0a`–`#1a1a1a`) paired with vivid accent colors.
+- **Dual-accent** — orange-red (`hsl(12 100% 50%)`) as the primary accent and cyan (`hsl(185 100% 50%)`) as the secondary accent for links, lists, and quotes.
+- **Typographic** — generous line heights, italic heavy headings, and bold orange text formatting.
 
-1. Inside the `manifest.json` file, update the placeholder fields to describe your theme. For example:
+## Features
 
-  ```json
-  {
-    "name": "Moonstone",
-    "author": "Your Name",
-    "version": "0.0.0",
-    "minAppVersion": "1.10.6"
-  }
-  ```
+### Typography
 
-   - **name** is the name of your theme.
-   - **author** is your name.
-   - **version** is the version of your theme.
-   - **minAppVersion** should only be changed as you add new CSS from Obsidian updates.
+- **UI & text font:** [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans) (weights 200–800)
+- **Monospace font:** [Share Tech Mono](https://fonts.google.com/specimen/Share+Tech+Mono)
+- Base text size of **18px** in dark mode with a **1.75** normal line height
+- Heavy, italic headings (`h1`–`h6`) in a descending orange ramp
+- Bold text rendered in bright orange at weight 800
 
-After you have those fields configured, all that's left to do is add your styles! All of your CSS needs to be inside the file `theme.css` as a part of your [release](#releasing-versions).
+### Colors
 
-For a deeper walkthrough, see the official [Build a theme](https://docs.obsidian.md/Themes/App+themes/Build+a+theme) tutorial.
+| Element                     | Color                             |
+| --------------------------- | --------------------------------- |
+| Primary accent (orange-red) | `hsl(12 100% 50%)`                |
+| Secondary accent (cyan)     | `hsl(185 100% 50%)`               |
+| Highlight background        | `hsl(185 100% 17.5%)` (deep teal) |
+| Backgrounds                 | `#0a0a0a` → `#1a1a1a`             |
+| Text                        | `hsl(12 0% 80%)` (warm gray)      |
 
-## Preparing your theme for the community directory
+### Customization Highlights
 
-Before you can submit your theme to the [community directory](https://community.obsidian.md/), there are a few things you'll need to prepare.
+- **Code blocks** with a custom syntax palette: orange functions, amber keywords/values, muted teal properties, and a unique tag color
+- **Tags** with cyan-on-dark chips that flip to orange on hover
+- **Blockquotes** with a thick cyan border, deep teal background, and italic muted text
+- **Tables** with dark orange headers and matching borders
+- **Graph view** recolored: orange nodes and lines, cyan for tags
+- **Checkboxes** in orange that switch to cyan on hover
+- **Nav items** — cyan hover, orange active states
+- **Pill-shaped buttons** (`--button-radius: 40px`) as the sole round element
+- Squared-off toggles, sliders, inputs, and small radii applied selectively per component
 
-Review the [Theme guidelines](https://docs.obsidian.md/Themes/App+themes/Theme+guidelines) for best practices, such as using CSS variables, avoiding `!important`, and keeping assets local. Themes that don't follow them are more likely to break on future Obsidian versions or get flagged during review.
+## Installation
 
-This template already includes [`stylelint-config-obsidianmd`](https://github.com/obsidianmd/stylelint-config), which enforces the same CSS rules used during theme review. Run `npm install` once, then `npm run lint` to check `theme.css` against them. This also runs automatically on every pull request via the [lint workflow](.github/workflows/lint.yml).
+### From Obsidian
 
-### Add a screenshot thumbnail
+1. Open **Settings → Appearance → Manage**
+2. Search for "Hyperion"
+3. Click **Install**, then **Use**
 
-Inside the repository, include a screenshot thumbnail of your theme. We recommend storing it in a `screenshots` folder at the root of your repository, for example `screenshots/screenshot.png`. This image will be used for the small preview in the theme list.
+### Manual
 
-Your screenshot file should be `16:9` aspect ratio.
-The recommended size is 512x288.
+1. Download `theme.css` into your vault's `.obsidian/themes/Hyperion/` folder
+2. Open **Settings → Appearance → Theme** and select **Hyperion**
 
-### Releasing versions
+> **Note:** Hyperion is a dark theme; keep Obsidian's base color scheme set to _Dark_ for the intended experience.
 
-Themes support [GitHub Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository), introduced in v0.16 of Obsidian. This lets you specify which versions of your theme are compatible with which versions of Obsidian.
+## Customizing
 
-This repository already includes a [GitHub Actions workflow](.github/workflows/release.yml) that automates this. Pushing a tag matching your `manifest.json` version creates a draft release with `manifest.json` and `theme.css` attached, which you can then review and publish. See [Release your theme with GitHub Actions](https://docs.obsidian.md/Themes/App+themes/Release+your+theme+with+GitHub+Actions) for the full walkthrough.
+Hyperion is built entirely on Obsidian's CSS variables and grouped by component (headings, code, tags, tables, graph, checkboxes, etc.), so it's easy to tweak:
 
-Before you push a tag, make sure `versions.json` is up to date. This file maps your theme's version to the minimum Obsidian version it's compatible with:
+- Change `--color-accent` (and the `hsl(12 ...)` values) to shift the primary accent
+- Change `--color-link` / `--list-marker-color` (and the `hsl(185 ...)` values) to shift the secondary accent
+- Adjust the radii block at the top of `body` to soften or harden the look
+- Reference: [Obsidian CSS variables documentation](https://docs.obsidian.md/Reference/CSS+variables/)
 
-```json
-{
-  "1.0.0": "1.10.6"
-}
-```
+## Compatibility
 
-For the initial release of your theme, you shouldn't need to make any changes to this file. When you release a new version, add an entry for it:
+Requires Obsidian **1.0+** (CSS variables based theming).
 
-```json
-{
-  "1.0.0": "1.10.6",
-  "1.0.1": "1.10.6"
-}
-```
+## License
 
-The "key" is your theme's version, and the "value" is the minimum version of Obsidian that version is compatible with. If a new version of your theme only works with an Insider build of Obsidian, set this value accordingly, so users on older versions of Obsidian won't be prompted to update to a version that won't work for them.
-
-## Submit your theme for review
-
-To have your theme included in the Theme Gallery, you'll submit it through the Obsidian Community directory. Make sure you've [added a screenshot](#add-a-screenshot-thumbnail) and [published a release](#releasing-versions) first, since the submission form needs both.
-
-You'll also need a `LICENSE` file in the root of your repository, which isn't included in this template. See [Choose a License](https://choosealicense.com/) if you're not sure which one to use. See the official [Submit your theme](https://docs.obsidian.md/Themes/App+themes/Submit+your+theme) guide for more detail.
-
-1. Go to [community.obsidian.md](https://community.obsidian.md) and sign in with your Obsidian account.
-2. Link your GitHub account to your profile. This lets the directory verify that you own the repository you're submitting.
-3. In the sidebar, select **Themes**, then select **New theme**.
-4. Fill out the submission form:
-   - **GitHub repository URL** is your repository's URL, for example `https://github.com/your-username/your-repo-name`.
-   - **Owner** is who will own and maintain this entry, and doesn't have to match the repository's GitHub owner.
-   - **Screenshot path** is the path to your screenshot, relative to the repository root, for example `screenshots/screenshot.png`.
-   - For **Supported modes**, select Dark and/or Light depending on which your theme supports.
-5. Read and agree to the [Developer Policies](https://docs.obsidian.md/Developer+policies), and confirm that you'll continue to support your theme (or remove/transfer it if you can no longer provide support).
-6. Select **Submit**.
-
-The directory processes the `manifest.json` at the HEAD of your repository's default branch, so make sure it's accurate and committed before submitting. Obsidian downloads `manifest.json` and `theme.css` from the GitHub release whose tag matches the version in your manifest, which is why a published release is required.
+[MIT](LICENSE)

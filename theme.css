@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
 body {
 	--radius-s: 0px;
 	--radius-m: 0px;
@@ -8,9 +12,337 @@ body {
 	--toggle-radius: 0px;
 	--toggle-thumb-radius: 0px;
 	--slider-thumb-radius: 0px;
+
+	--font-text-theme: "Plus Jakarta Sans", sans-serif;
+	--font-interface-theme: "Plus Jakarta Sans", sans-serif;
+	--font-monospace-theme: "Plus Jakarta Sans", sans-serif;
 }
 
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
+.theme-dark {
+	--font-text-theme: "Plus Jakarta Sans", sans-serif;
+	--font-interface-theme: "Plus Jakarta Sans", sans-serif;
+	/* --font-monospace-theme: "Plus Jakarta Sans", sans-serif; */
+	--font-monospace-theme: "Share Tech Mono", monospace;
+
+	--font-text-size: 18px;
+
+	/* --color-base-00: hsl(221, 8%, 14%); */
+	/* --color-base-05: hsl(5 30.9% 5.9%); */
+	/* --color-base-10: hsl(221, 8%, 19%); */
+	/* --color-base-20: hsl(221, 8%, 23%); */
+	/* --color-base-25: hsl(221, 8%, 27%); */
+	/* --color-base-30: hsl(221, 8%, 35%); */
+	/* --color-base-35: hsl(221, 8%, 40%); */
+	/* --color-base-50: hsl(221, 8%, 45%); */
+	/* --color-base-40: hsl(221, 8%, 55%); */
+	/* --color-base-60: hsl(221, 8%, 65%); */
+	/* --color-base-70: hsl(221, 8%, 75%); */
+	/* --color-base-80: hsl(221, 8%, 85%); */
+	--color-base-100: hsl(12 100% 60.8%);
+
+	/* Heading Colors  */
+	--color-heading-100: hsl(12 100% 50%);
+	--color-heading-90: hsl(12 90% 50%);
+	--color-heading-80: hsl(12 80% 50%);
+	--color-heading-70: hsl(12 70% 50%);
+	--color-heading-60: hsl(12 60% 50%);
+	--color-heading-50: hsl(12 50% 50%);
+	--color-heading-40: hsl(12 50% 40%);
+
+	--h1-color: var(--color-heading-100);
+	--h2-color: var(--color-heading-90);
+	--h3-color: var(--color-heading-80);
+	--h4-color: var(--color-heading-70);
+	--h5-color: var(--color-heading-70);
+	--h6-color: var(--color-heading-50);
+
+	/* Heading Styles */
+	--h1-style: italic;
+	--h2-style: italic;
+	--h3-style: italic;
+	--h4-style: italic;
+	--h5-style: italic;
+	--h6-style: italic;
+
+	/* Heading Weights */
+	--h1-weight: 800;
+	--h2-weight: 800;
+	--h3-weight: 800;
+	--h4-weight: 800;
+	--h5-weight: 800;
+	--h6-weight: 800;
+
+	/* Heading Sizes */
+	--h1-size: 2.5em;
+	--h2-size: 2.25em;
+	--h3-size: 2em;
+	--h4-size: 1.75em;
+	--h5-size: 1.5em;
+	--h6-size: 1.25em;
+
+	/* Normal Text  */
+	--normal-text-color: hsl(12 0% 80%);
+	--text-selection-color: hsl(12 80% 50%);
+	--text-normal: var(--normal-text-color);
+	--text-selection: var(--text-selection-color);
+	--text-highlight-bg: hsl(185 100% 17.5%);
+
+	--inline-title-color: var(--color-base-100);
+	--collapse-icon-color-collapsed: var(--color-heading-50);
+	--hr-color: var(--color-heading-90);
+
+	/* Link Colors */
+	--color-link: hsl(185 100% 50%);
+	--color-link-unresolved: hsl(185 100% 25%);
+	--link-color: var(--color-link);
+	--link-external-color: var(--color-link);
+	--link-unresolved-color: var(--color-link-unresolved);
+
+	/* Background Colors */
+	--background-primary: #0a0a0a;
+	--background-primary-alt: #131313;
+	--background-secondary: #0d0d0d;
+	--background-secondary-alt: #1a1a1a;
+
+	/* Code Colors */
+	--code-bg-color: hsl(0 0% 7.5%);
+	--code-comment-color: hsl(27 9.7% 36.5%);
+	--code-normal-color: hsl(0 0% 75%);
+	--code-function-color: hsl(6 96.1% 59.4%);
+	--code-keyword-color: hsl(24 87.7% 44.7%);
+	--code-operator-color: hsl(157 15.9% 58%);
+	--code-property-color: hsl(193 21.3% 58.6%);
+	--code-string-color: hsl(60 70.8% 34.9%);
+	--code-value-color: hsl(42 95.4% 57.5%);
+	--code-tag-color: hsl(333 33.6% 53.9%);
+	--code-important-color: hsl(12 75% 50%);
+
+	--code-background: var(--code-bg-color);
+	--code-normal: var(--code-normal-color);
+	--code-comment: var(--code-comment-color);
+	--code-function: var(--code-function-color);
+	--code-important: var(--code-important-color);
+	--code-keyword: var(--code-keyword-color);
+	--code-operator: var(--code-operator-color);
+	--code-property: var(--code-property-color);
+	--code-punctuation: var(--color-base-40);
+	--code-string: var(--code-string-color);
+	--code-tag: var(--code-tag-color);
+	--code-value: var(--code-value-color);
+
+	/* Tag Colors */
+	--tag-color-normal: hsl(185 100% 50%);
+	--tag-color-background: hsl(185 50% 6%);
+	--tag-color-hover-val: hsl(12 100% 50%);
+	--tag-color-background-hover-val: hsl(12 100% 6%);
+
+	--tag-color: var(--tag-color-normal);
+	--tag-background: var(--tag-color-background);
+	--tag-color-hover: var(--tag-color-hover-val);
+	--tag-background-hover: var(--tag-color-background-hover-val);
+
+	/* Navigation Item Colors  */
+
+	--nav-item-color-hover-val: hsl(185 100% 50%);
+	--nav-item-background-hover-val: hsl(185 100% 5%);
+	--nav-item-color-hover: var(--nav-item-color-hover-val);
+	--nav-item-background-hover: var(--nav-item-background-hover-val);
+
+	--nav-item-color-active-val: hsl(12 100% 50%);
+	--nav-item-color-background-active-val: hsl(12 100% 5%);
+	--nav-item-color-active: var(--nav-item-color-active-val);
+	--nav-item-background-active: var(--nav-item-color-background-active-val);
+
+	/* Tab Text Colors  */
+	--tab-text-color-active: var(--color-base-100);
+	--tab-text-color-focused-active: var(--color-base-100);
+	--tab-text-color-focused-active-current: var(--color-base-100);
+
+	/* Blockquote Colors  */
+	--blockquote-background-color: hsl(185 100% 5%);
+	--blockquote-border-color: hsl(185 100% 50%);
+	--blockquote-broder-thickness: 10;
+	--blockquote-font-style: italic;
+	--blockquote-text-color: hsl(185 50% 35%);
+
+	/* Table Colors  */
+	--table-header-background: hsl(12 100% 25%);
+	/* --table-background: var(--background-secondary); */
+	/* --table-row-alt-background: var(--background-secondary-alt); */
+	--table-border-color: hsl(12 100% 15%);
+
+	/* Text Formatting */
+	--font-weight: 400;
+	--bold-weight: 800;
+	--bold-modifier: 900;
+	--bold-color: hsl(12 100% 50%);
+	--italic-color: hsl(185 100% 50%);
+
+	/* Line Heights  */
+	--line-height-normal: 1.75;
+	--line-height-tight: 1.5;
+
+	/* Paragraph Spacing  */
+	--heading-spacing: 15;
+	--p-spacing: 10;
+
+	/* Caret Color */
+	--caret-color: hsl(12 100% 50%);
+
+	/* Icon Configurations */
+	--icon-color: hsl(12 100% 35%);
+	--icon-color-hover: hsl(185 100% 50%);
+	--icon-color-active: hsl(12 100% 50%);
+	--icon-color-focused: hsl(12 100% 60%);
+
+	/* Radius Configurations  */
+	--radius-s: 8px;
+	--radius-m: 16px;
+	--radius-l: 24px;
+	--radius-xl: 32px;
+
+	/* Border Configurations  */
+	--border-width: 1.5px;
+	--background-modifier-border: hsl(12 10% 10%);
+	--background-modifier-border-hover: hsl(12 10% 10%);
+	--background-modifier-border-focus: hsl(12 10% 10%);
+
+	/* Graph Configurations */
+	/* --graph-controls-width: 2.5; */
+	--graph-line: hsl(12 80% 15%);
+	--graph-node: hsl(12 85% 50%);
+	--graph-node-unresolved: hsl(12 30% 30%);
+	--graph-node-focus: hsl(12 100% 50%);
+	--graph-node-tag: hsl(185 100% 50%);
+	--graph-node-attachment: green;
+
+	/* Search Configurations */
+	/* --search-clear-button-color Clear search button color
+	/* --search-clear-button-size	Clear search button size
+	/* --search-icon-color	Search magnifying glass icon color
+	/* --search-icon-size	Search icon size
+	/* --search-result-background	Search result background color */
+	/* --search-icon-size	Search icon size
+	/* --search-result-background	Search result background color */
+	--search-clear-button-color: hsl(12 100% 50%);
+	--search-result-background: hsl(185 50% 10%);
+
+	/* File Explorer Configurations  */
+	--vault-profile-font-size: 24px;
+	--vault-profile-font-weight: 800;
+	--vault-profile-color: hsl(12 100% 50%);
+	--vault-profile-color-hover: hsl(185 100% 50%);
+
+	/* List Configurations  */
+	--list-marker-color: hsl(185 100% 50%);
+	--list-marker-color-hover: hsl(12 100% 50%);
+	--list-bullet-size: 7.5px;
+
+	/* Checkbox Configurations */
+	--checklist-done-color: hsl(12 100% 50%);
+	--checkbox-color: hsl(12 75% 50%);
+	--checkbox-color-hover: hsl(185 100% 50%);
+
+	/* Button Configurations */
+	--button-radius: 40px;
+
+	/* Color Input Configurations */
+	/* --swatch-radius: 10px; */
+	/* --swatch-height: ; */
+	/* --swatch-width: ; */
+	/* --swatch-shadow: ; */
+
+	/* Dialog Configurations */
+	/* --dialog-width: ; */
+	/* --dialog-max-width: ; */
+	/* --dialog-max-height: ; */
+
+	/* Dragging Configurations */
+	/* --drag-ghost-background: ; */
+	/* --drag-ghost-text-color: ; */
+
+	/* Dropdown Configurations */
+	/* --dropdown-background: red; */
+	/* --dropdown-background-blend-mode: ; */
+	/* --dropdown-background-hover: ; */
+	/* --dropdown-background-position: ; */
+	/* --dropbown-background-size: ; */
+	/* --dropbown-padding: ; */
+
+	/* Indentation Guides Configurations */
+	--indentation-guide-width: 0.5px;
+	--indentation-guide-width-active: 1px;
+	--indentation-guide-color: hsl(12 100% 10%);
+	--indentation-guide-color-active: hsl(185 100% 10%);
+	/* --indentation-guide-editing-indent: ;  */
+	/* --indentation-guide-reading-indendt: ;  */
+	/* --indentation-guide-source-indent: ; */
+
+	/* Modal Configurations */
+	--modal-background: red;
+	/* --modal-width: ; */
+	/* --modal-height: ; */
+	/* --modal-max-width: ; */
+	/* --modal-max-height: ; */
+	/* --modal-max-width-narrow: ; */
+	/* --modal-border-width: ; */
+	/* --modal-border-color: ; */
+	/* --modal-radius: ; */
+	/* --modal-community-sidebar-width: ; */
+
+	/* Modal Configurations */
+	/* --slider-thumb-border-width: ;  */
+	/* --slider-thumb-border-color: green; */
+	--slider-track-background: hsl(12 100% 50%);
+	--slider-thumb-radius: 10px;
+	--slider-thumb-width: 10px;
+	--slider-track-height: 5px;
+
+	/* Text Input Configurations */
+	--input-height: 30px;
+	--input-radius: 7.5px;
+	--input-font-weight: 600;
+	--input-border-width: 1.5px;
+
+	/* Toggle Configurations */
+	/* --toggle-border-width: ;  */
+	--toggle-thumb-color: hsl(12 100% 5%);
+	--toggle-thumb-radius: 2.5px;
+	--toggle-thumb-height: 10px;
+	--toggle-thumb-width: 10px;
+
+	/* Prompt Configurations */
+	/* --prompt-input-height: ; */
+	--prompt-width: 1000px;
+	--prompt-max-width: 1000px;
+	--prompt-max-height: 600px;
+	--prompt-border-width: 2.5px;
+	--prompt-border-color: hsl(12 100% 15%);
+
+	/* Popover Configurations */
+	/* --popover-width: ;  */
+	/* --popover-max-height: ; */
+	/* --popover-height: ; */
+
+	/* Multi-Select Configurations */
+	/* --pill-color: green; */
+	/* --pill-background: blue; */
+
+	/* Properties Configurations */
+	/* --metadata-background: var(--background-secondary); */
+
+	/* Accent Color Configurations */
+	--color-accent: hsl(12 100% 50%);
+
+	/* Interactive Colors Configurations */
+	--interactive-normal: hsl(12 100% 25%);
+	--text-on-accent: hsl(12 100% 5%);
+
+	--text-accent: hsl(12 100% 50%);
+}
+
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after {
 	display: none;
 }
 
@@ -32,3 +364,21 @@ svg * {
 .menu-separator {
 	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
 }
+
+/* TODO: add table configurations  */
+/* TODO: add footnote configs  */
+/* TODO: add dropdown configs  */
+/* TODO: add navigation configs  */
+/* TODO: add slider configs  */
+/* TODO: add tabs  */
+/* TODO: add text input  */
+/* TODO: add Toggle  */
+/* TODO: add popover  */
+/* TODO: add modal  */
+/* FIX: default color palettes  */
+/* FIX: dropdown colors  */
+/* FIX: highlight color */
+/* FIX: link colors */
+/* FIX: pinned tab icon color */
+
+/* INFO: https://docs.obsidian.md/Reference/CSS+variables/Window/Ribbon */
