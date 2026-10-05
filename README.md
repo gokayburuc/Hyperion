@@ -1,5 +1,7 @@
 # Hyperion
 
+![2-screenshot](./screenshots/2.png)
+
 A sharp, high-contrast dark theme for [Obsidian](https://obsidian.md), built around a bold orange-red accent, an electric cyan secondary color, and a zero-radius "brutalist" design language.
 
 ![Obsidian Downloads](https://img.shields.io/badge/dynamic/json?query=%24.downloads&url=https%3A%2F%2Fraw.githubusercontent.com%2Fobsidianmd%2Fobsidian-releases%2Fmaster%2Fcommunity-theme-stats.json&label=downloads&color=%23ff4500)
